@@ -42,5 +42,8 @@ kocaeli : 9
                 if i == "":
                     hava.remove("")
             return hava
+    
+    
+
 
 tjk_api = TJK()
