@@ -17,13 +17,13 @@ def clearsuff(suffcln:str):
             return str(prd)
 
 while True:
-    time.sleep(0.001)
-    try:
-        if keyboard.is_pressed("ctrl+c"):
-            win32clipboard.OpenClipboard()
-            data = str(win32clipboard.GetClipboardData())
-            new = clearsuff(clearpref(data))
-            win32clipboard.EmptyClipboard()
-            win32clipboard.SetClipboardData(win32con.CF_UNICODETEXT,new)
-            win32clipboard.CloseClipboard()
-    except:pass
+    time.sleep(0.01)
+    if keyboard.is_pressed("ctrl+c"):
+        try:
+                win32clipboard.OpenClipboard()
+                data = str(win32clipboard.GetClipboardData())
+                new = clearsuff(clearpref(data))
+                win32clipboard.EmptyClipboard()
+                win32clipboard.SetClipboardData(win32con.CF_UNICODETEXT,new)
+                win32clipboard.CloseClipboard()
+        except:pass

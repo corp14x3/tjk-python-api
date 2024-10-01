@@ -39,8 +39,13 @@ kocaeli : 9
                                 hava_durumlari = str(span).replace("\n","").replace('<span class="raceWeatherBrown">',"").replace('<span class="raceWeatherGreen">',"").replace("</span>","")
                                 hava.append(hava_durumlari)
             for i in hava:
+                if i == " ":
+                    hava.remove(" ")
                 if i == "":
                     hava.remove("")
+
+            if len(hava) < 7:
+                return None
             return hava
     
     
